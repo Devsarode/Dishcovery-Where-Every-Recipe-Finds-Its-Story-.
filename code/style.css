@@ -1,0 +1,393 @@
+/* ==============================
+   Dishcovery – Full Bottom Nav CSS
+============================== */
+
+:root {
+  --bg: #fafafa;
+  --card: #ffffff;
+  --accent: #ff4e3d;
+  --accent-hover: #e13e2f;
+  --text: #333;
+  --muted: #666;
+  --border: #ddd;
+  --radius: 12px;
+  --shadow: 0 4px 12px rgba(0,0,0,0.08);
+  --transition: 0.25s ease;
+  --nav-height: 60px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* ===== Header ===== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo h1 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.profile-icon:hover {
+  background: var(--accent-hover);
+}
+
+/* ===== Sticky Bottom Nav ===== */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-height);
+  background: var(--card);
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: var(--shadow);
+  z-index: 999;
+}
+
+.bottom-nav a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 12px;
+  text-decoration: none;
+  transition: all var(--transition);
+  position: relative;
+}
+
+.bottom-nav a i {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.bottom-nav a.active,
+.bottom-nav a:hover {
+  color: var(--accent);
+  transform: translateY(-3px);
+}
+
+/* ===== Main Content ===== */
+main {
+  padding: 20px;
+  margin-bottom: var(--nav-height); /* space for sticky nav */
+}
+
+/* ===== Cards / Video Feeds ===== */
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+  transition: transform var(--transition), box-shadow var(--transition);
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.video-thumb {
+  width: 100%;
+  height: 180px;
+  background: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: #888;
+}
+
+/* ===== Meta & Actions ===== */
+.meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+}
+
+.actions button {
+  border: none;
+  background: var(--accent);
+  color: white;
+  padding: 6px 12px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.actions button:hover {
+  background: var(--accent-hover);
+  transform: scale(1.05);
+}
+
+/* ===== Upload Page ===== */
+.upload-section {
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.upload-section h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--accent);
+  text-align: center;
+}
+
+.upload-section label {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.upload-section input,
+.upload-section textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  font-size: 15px;
+}
+
+.upload-section textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.upload-section button {
+  width: fit-content;
+  background: var(--accent);
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  align-self: center;
+  transition: all var(--transition);
+}
+
+.upload-section button:hover {
+  background: var(--accent-hover);
+  transform: scale(1.05);
+}
+
+/* ===== Friends Page ===== */
+.friends {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.friend-list {
+  list-style: none;
+  padding: 0;
+}
+
+.friend-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--card);
+  padding: 10px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform var(--transition);
+}
+
+.friend-list li:hover {
+  transform: translateY(-3px);
+}
+
+/* ===== Profile Page ===== */
+.profile-section {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 12px;
+}
+
+.profile-name {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.profile-info {
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+/* ===== Saved Recipes ===== */
+.saved-recipes ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.saved-recipes li {
+  background: var(--card);
+  padding: 8px;
+  border-radius: var(--radius);
+  margin-bottom: 8px;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition);
+}
+
+.saved-recipes li:hover {
+  transform: translateY(-3px);
+}
+
+/* ===== Responsive ===== */
+@media (min-width: 768px) {
+  main {
+    margin-bottom: var(--nav-height); /* still keep nav at bottom */
+  }
+
+  .profile-icon {
+    position: absolute;
+    right: 20px;
+    top: 12px;
+  }
+
+  .bottom-nav a {
+    font-size: 14px;
+  }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.modal-content {
+  background: #fff;
+  width: 90%;
+  max-width: 800px;
+  border-radius: 12px;
+  padding: 20px;
+  position: relative;
+}
+
+.modal .close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.video-actions button {
+  margin-right: 10px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.video-actions button:hover {
+  background: var(--accent-hover);
+}
+
+.comments-section {
+  margin-top: 16px;
+}
+
+.comments-section input {
+  width: 70%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+}
+
+.comments-section button {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+}
+
+.comments-section ul {
+  margin-top: 12px;
+  list-style: none;
+  max-height: 150px;
+  overflow-y: auto;
+  padding-left: 0;
+}
+
+.comments-section ul li {
+  background: #f4f4f4;
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+}

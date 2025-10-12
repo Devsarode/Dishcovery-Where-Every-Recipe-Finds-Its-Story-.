@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dishcovery | Home</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <h1><i class="fa-solid fa-utensils"></i> Dishcovery</h1>
+    </div>
+    <div class="profile-icon">
+      <a href="profile.html"><i class="fa-solid fa-user-circle"></i></a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <section class="recipe-feed">
+      <h2><i class="fa-solid fa-fire"></i> Trending Recipes</h2>
+
+      <div class="card" >
+        <div class="video-thumb">Video Preview</div>
+        <div class="meta">
+          <h3>Paneer Butter Masala</h3>
+          <div class="actions">
+            <button><i class="fa-solid fa-thumbs-up"></i> Like</button>
+            <button><i class="fa-solid fa-bookmark"></i> Save</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="video-thumb">Video Preview</div>
+        <div class="meta">
+          <h3>Chocolate Lava Cake</h3>
+          <div class="actions">
+            <button><i class="fa-solid fa-thumbs-up"></i> Like</button>
+            <button><i class="fa-solid fa-bookmark"></i> Save</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Sticky Bottom Nav -->
+  <nav class="bottom-nav">
+    <a href="index.html" class="active"><i class="fa-solid fa-house"></i><span>Home</span></a>
+    <a href="subscriptions.html"><i class="fa-solid fa-bell"></i><span>Subscriptions</span></a>
+    <a href="upload.html"><i class="fa-solid fa-upload"></i><span>Upload</span></a>
+    <a href="friends.html"><i class="fa-solid fa-user-friends"></i><span>Friends</span></a>
+  </nav>
+  <div class="modal" id="videoModal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <video id="modalVideo" width="100%" controls></video>
+    <div class="video-actions">
+      <button id="likeVideo"><i class="fa-solid fa-thumbs-up"></i> Like</button>
+      <button id="saveVideo"><i class="fa-solid fa-bookmark"></i> Save</button>
+    </div>
+    <div class="comments-section">
+      <h3>Comments</h3>
+      <input type="text" id="commentInput" placeholder="Add a comment...">
+      <button id="postComment">Post</button>
+      <ul id="commentList"></ul>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
